@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.greetings{
+    font-size: 6rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #ffffff;
+        text-shadow: 0 0 12px #f71d95, 0 0 50px #ee00ff, 0 0 100px #fd60d1;
+    }
+    10%, 90%{
+        color: #696565;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .6s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .12s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+    }
+    .description{
+        font-size: 1rem;
+    }
+    
+    .button a{
+        font-size: .5rem;
+    }
+}
+
+.description{
+    color: #d0ff00;
+}
+
+/* Estilo para el botón */
+.button button {
+    background-color: rgb(255, 151, 255); /* Fondo amarillo */
+    border: none; /* Sin bordes */
+    padding: 10px 20px; /* Ajusta el relleno según tu preferencia */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer;
+    position: relative; /* Necesario para el resplandor */
+    border-radius: 20px; /* Esquinas redondeadas */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el color de fondo */
+  }
+  
+  /* Estilo para el enlace dentro del botón */
+  .button button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto del botón */
+  }
+  
+  /* Efecto de resplandor al pasar el cursor sobre el botón */
+  .button button:hover {
+    background-color: #ecafe0; /* Cambia el color de fondo al pasar el mouse a naranja */
+    box-shadow: 0 0 10px rgb(219, 138, 214), 0 0 20px rgb(255, 0, 208), 0 0 30px rgb(255, 0, 238); /* Efecto de resplandor amarillo */
+  }
+  
+  /* Estilo para el corazón */
+  .heart {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fc93e7; /* Color del corazón */
+    clip-path: polygon(
+        50% 15%,
+        61.8% 30%,
+        85.4% 29.8%,
+        75% 42.3%,
+        79.3% 58.2%,
+        60.6% 70.1%,
+        50% 100%,
+        39.4% 70.1%,
+        20.7% 58.2%,
+        25% 42.3%,
+        14.6% 29.8%,
+        38.2% 30%
+    );
+    animation: fall 6s linear infinite; /* Animación de caída */
+    left: calc(var(--x) * 1vw); /* Posición horizontal aleatoria */
+    transform: translateY(calc(var(--y) * 1vh)); /* Posición vertical aleatoria */
+}
+
+/* Animación de caída de los corazones */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.corazon{
+    --h: 2;/*cambia esto para cambiar el tamaño del corazón*/
+    /* este es el tamaño del corazón en vh. Si prefieres que sea en píxeles cambia 1vh por 1px */
+    position: absolute;
+	width:calc(var(--h) * .9 * 1vh);
+	height:calc(var(--h) * .8vh);
+	
+  margin:auto;
+	position:absolute;
+    animation: caida 6s linear infinite; /* Animación de caída */
+    left: calc(var(--x) * 1vw); /* Posición horizontal aleatoria */
+    transform: translateY(calc(var(--y) * 1vh));
+	}
+
+.corazon div{
+	background:#ff0000;
+	width:calc((2*var(--h) / 3) * 1vh);
+	height:calc(var(--h) * 1vh);
+	display:block;
+	position:absolute;
+	border-radius:50%;
+	}
+
+.izquierda	{
+  left:0;
+  transform:rotate(-30deg);
+}
+
+.derecha{
+  right:0;
+  transform:rotate(30deg);
+}
+
+@keyframes caida {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.flores {
+    position: absolute;
+    font-size: 1rem; /* Tamaño de fuente ajustable según tus preferencias */
+    color: #f71d95; /* Color ajustable según tus preferencias */
+    animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/flowers.png" type="image/x-icon">
+    <title>flores</title>
+
+    <script>
+    
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.setProperty("--x", Math.random() * 100); // Posición horizontal aleatoria
+    heart.style.setProperty("--y", Math.random() * 100); // Posición vertical aleatoria
+    document.getElementById("hearts-container").appendChild(heart);
+
+    // Elimina el corazón cuando finaliza la animación
+    heart.addEventListener("animationiteration", () => {
+        heart.remove();
+    });
+}
+
+
+function createHearts() {
+    const corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    
+    const izquierda = document.createElement("div");
+    izquierda.classList.add("izquierda"); 
+    corazon.appendChild(izquierda);
+    
+    const derecha = document.createElement("div");
+    derecha.classList.add("derecha");
+    corazon.appendChild(derecha);
+
+    
+    corazon.style.setProperty("--x", Math.random() * 100); 
+    corazon.style.setProperty("--y", Math.random() * 100);
+    
+
+    document.getElementById("container-corazon").appendChild(corazon);
+
+    
+    corazon.addEventListener("animationiteration", () => {
+        corazon.remove();
+    });
+}
+function createFlores() {
+    const flores = document.createElement("div");
+    flores.classList.add("flores");
+
+    flores.style.left = Math.random() * window.innerWidth + "px";
+    flores.style.top = "0";
+
+    document.getElementById("flores-container").appendChild(flores);
+
+    flores.addEventListener("animationiteration", () => {
+        flores.remove();
+    });
+}
+
+setInterval(createFlores, 1000); // Ajusta el intervalo de creación de flores según tus preferencias
+
+
+
+// Crea y anima un nuevo corazón cada cierto intervalo de tiempo
+setInterval(createHeart, 100);
+setInterval(createHearts, 50); // Intervalo más corto para crear corazones con mayor frecuencia
+
+        </script>
+        
+<header>
+<div>
+    <div id="container-corazon" >
+        <div class="corazon">
+            <div class="izquierda"></div>
+            <div class="derecha"></div>
+        </div>
+    </div>
+
+    <div id="flores-container" >✿</div>
+
+    <div id="hearts-container"></div>
+
+
+    </div>
+</header>
+</head>
+
+<body>
+<!-- Agrega más corazones según sea necesario -->
+
+    <div class="greetings">
+        
+        <span>Unas</span>
+        <span>bonitas</span>
+        <span>flores</span>
+        <span></span>
+    </div>
+    <div class="greetings">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="description">
+        <span>Para lolis</span>
+    </div>
+    <div class="button">
+        <button>
+            <a href="flowers.html">✿</a>
+        </button>
+        
+    </div>
+</body>
+</html>
